@@ -7,8 +7,9 @@
 //
 // This is the list of SVGO Plugins available taken from https://github.com/svg/svgo/blob/master/.svgo.yml. The order is important!
 //
-// These are some sane defaults we've found to work reasonably well, compressing your SVG without
-// altering the shapes or the look. Your milleage may vary, so feel free to tweak these…
+// This is a combo of Bohemian's defaults and the settings from Boiler
+// particularly we must retain: currentColor, focusable:false for access compliance
+// next steps: pull in convert ids to classes: https://gist.github.com/bomberstudios/848827b37bed38ca0aae5fe2bbd0843a
 
 module.exports = {
   "comment": "This is the settings file for the SVGO Compressor Plugin. For more info, please check <https://github.com/BohemianCoding/svgo-compressor>",
@@ -32,7 +33,7 @@ module.exports = {
     { "name": "removeUselessDefs", enabled: true },
     { "name": "cleanupNumericValues", enabled: true },
     { "name": "cleanupListOfValues", enabled: true },
-    { "name": "convertColors", enabled: true },
+    { "name": "convertColors", enabled: true, "params": {currentColor: true } },
     { "name": "removeUnknownsAndDefaults", enabled: true },
     { "name": "removeNonInheritableGroupAttrs", enabled: true },
     { "name": "removeUselessStrokeAndFill", enabled: true },
@@ -46,7 +47,7 @@ module.exports = {
     { "name": "collapseGroups", enabled: true },
     { "name": "convertPathData", enabled: false },
     { "name": "convertTransform", enabled: true },
-    { "name": "removeEmptyAttrs", enabled: true },
+    { "name": "removeEmptyAttrs", enabled: false },
     { "name": "removeEmptyContainers", enabled: true },
     { "name": "mergePaths", enabled: true },
     { "name": "removeUnusedNS", enabled: true },
@@ -60,7 +61,7 @@ module.exports = {
     { "name": "addClassesToSVGElement", enabled: false },
     { "name": "removeStyleElement", enabled: false },
     { "name": "removeScriptElement", enabled: false },
-    { "name": "addAttributesToSVGElement", enabled: false },
+    { "name": "addAttributesToSVGElement", enabled: true, "params": {"attribute": "focusable='false'"} },
     { "name": "removeOffCanvasPaths", enabled: false },
     { "name": "reusePaths", enabled: false }
   ]

@@ -1,13 +1,12 @@
 {
-  "name": "svgo-compressor",
+  "name": "supericon",
   "version": "1.7.0",
   "license": "MIT",
-  "description": "A Plugin that compresses SVG assets using SVGO, right when you export them. This Plugin *requires* Sketch 3.8.",
+  "description": "A Plugin that compresses SVG assets using SVGO, right when you export them. This Plugin *requires* Sketch 3.8. and is a minimal fork of Bohemian's SVGO compressor",
   "skpm": {
-    "name": "SVGO Compressor",
-    "main": "SVGO Compressor.sketchplugin",
+    "name": "Super Icon",
+    "main": "supericon.sketchplugin",
     "manifest": "src/manifest.json",
-    "appcast": "https://raw.githubusercontent.com/BohemianCoding/svgo-compressor/develop/.appcast.xml",
     "assets": [
       "assets/**/*"
     ]
